@@ -57,14 +57,14 @@ namespace CMP1903_A1_2324
             Console.WriteLine("Play again? - Press 1");
             Console.WriteLine("Main Menu - Press 2");
             Console.WriteLine("                                   ");
-            restartOptions = Console.ReadLine();
+            restartOptions = Console.ReadLine(); //User input
             switch (restartGame)
             {
                 case "1":
-                    startGame();
+                    startGame(); //Restarts game
                     break;
                 case "2":
-                    Menu();
+                    Menu(); //Returns to main menu
                     break;
                 default: //In event of invalid input
                     Console.WriteLine("Invalid input");
@@ -76,7 +76,7 @@ namespace CMP1903_A1_2324
         {
             Environment.Exit(0);
         }
-        static void enterDebug()
+        static void enterDebug() //Enter debug mode
         {
             string debugMenu; //Debug menu UI
             Console.WriteLine("");
@@ -89,7 +89,7 @@ namespace CMP1903_A1_2324
         {
             while(true)
             {
-                Menu();
+                Menu(); //Calls main menu to begin program functionality
             }
         }
     }
