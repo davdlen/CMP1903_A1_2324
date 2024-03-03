@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,13 +8,23 @@ namespace CMP1903_A1_2324
 {
     internal class Testing
     {
-        /*
-         * This class should test the Game and the Die class.
-         * Create a Game object, call the methods and compare their output to expected output.
-         * Create a Die object and call its method.
-         * Use debug.assert() to make the comparisons and tests.
-         */
-
-        //Method
+        private Die debugDie1 = new Die();
+        private Die debugDie2 = new Die();
+        private Die debugDie3 = new Die();
+        private Die debugRoll = new Die();
+        public void debugInfo()
+        {
+            Debug.Assert(invalidSum(), "Sum of dice is incorrect.");
+            Debug.Assert(invalidRollParameter(), "Dice roll is not within valid parameter range (1-6).")
+        }
+        private bool invalidSum()
+        {
+            int rollSum = debugDie1 + debugDie2 + debugDie3;
+            return rollSum == (debugDie1.roll + debugDie2.roll + debugDie3.roll);
+        }
+        private bool invalidRollParameter()
+        {
+            return debugRoll.roll <= 6 && debugRoll.roll >=1;
+        }
     }
 }
