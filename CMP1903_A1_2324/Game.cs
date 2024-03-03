@@ -16,6 +16,7 @@ namespace CMP1903_A1_2324
             Console.WriteLine("Select menu option:");
             Console.WriteLine("Start Game - Press 1");
             Console.WriteLine("Close Game - Press 2");
+            Console.WriteLine("Enter Debug - Press 3")
             Console.WriteLine("                                   ");
             menuOption = Console.ReadLine(); //User input
             switch (menuOption)
@@ -26,13 +27,16 @@ namespace CMP1903_A1_2324
                 case "2": //Closes the game
                     closeGame();
                     break;
+                case "3": //Enters debug mode
+                    enterDebug();
+                    break;
                 default: //In event of invalid input
                     Console.WriteLine("Invalid input");
                     menuOption(); //Reloads main menu
                     break;
             }
         }
-        static void startGame()
+        static void startGame() //Starts game
         {
             Console.WriteLine("Rolling three dice...")
             Die roll1 = new Die(); //Rolling all 3 dice
@@ -48,7 +52,7 @@ namespace CMP1903_A1_2324
         }
         static void restartGame()
         {
-            string restartOptions;
+            string restartOptions; //Restart game option selection
             Console.WriteLine("                                   ");
             Console.WriteLine("Play again? - Press 1");
             Console.WriteLine("Main Menu - Press 2");
@@ -62,7 +66,7 @@ namespace CMP1903_A1_2324
                 case "2":
                     Menu();
                     break;
-                default:
+                default: //In event of invalid input
                     Console.WriteLine("Invalid input");
                     restartGame();
                     break;
@@ -71,6 +75,22 @@ namespace CMP1903_A1_2324
         static void closeGame()
         {
             Environment.Exit(0);
+        }
+        static void enterDebug()
+        {
+            string debugMenu; //Debug menu UI
+            Console.WriteLine("");
+            Console.WriteLine("D E B U G   M O D E");
+            Console.WriteLine("");
+            Testing debug = new Testing(); //Calling debug info from Testing class
+            debug.debugInfo(); 
+        }
+        static void Main(string[] args)
+        {
+            while(true)
+            {
+                Menu();
+            }
         }
     }
 }
